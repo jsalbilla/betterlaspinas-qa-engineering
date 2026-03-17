@@ -1,0 +1,27 @@
+{
+  "name": "betterlaspinas-qa-engineering",
+  "version": "1.0.0",
+  "description": "QA Strategy, Manual Test Suites, and Automation Scripts for the Better Las Piñas project.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsalbilla/betterlaspinas-qa-engineering.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jsalbilla/betterlaspinas-qa-engineering/issues"
+  },
+  "homepage": "https://github.com/jsalbilla/betterlaspinas-qa-engineering#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.5.0"
+  }
+}
