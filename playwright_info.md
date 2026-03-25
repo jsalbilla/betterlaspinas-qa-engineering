@@ -25,6 +25,7 @@ These settings apply globally to all browser contexts unless explicitly overridd
 | :--- | :--- | :--- |
 | **baseURL** | `https://betterlaspinas.org/` | The root URL for the application under test. Allows the use of relative paths in scripts (e.g., `page.goto('/')`). |
 | **testIdAttribute** | `data-test` | Overrides the default `data-testid` attribute. Locators will rely on custom `data-test` tags for stable element selection. |
+**actionTimeout** | `0` | **Disables** the specific timeout for individual actions (like `.click()` or `.fill()`). By setting this to 0, these actions will instead rely on the global **Step Timeout** (30s). |
 | **trace** | `"on"` | Captures a full DOM snapshot, console logs, and network requests for **all** test runs to aid in deep debugging. |
 | **video** | `"retain-on-failure"` | Records test execution video, but only saves it if the test fails. |
 | **screenshot** | `"only-on-failure"` | Automatically captures a visual snapshot of the DOM at the exact moment a test fails. |
