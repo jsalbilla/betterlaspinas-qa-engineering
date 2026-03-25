@@ -4,18 +4,20 @@ This document outlines the central configuration for the Playwright automation f
 
 ---
 
-## ⏱️ Global Execution & Timeouts
+## Global Execution & Timeouts
 
 This section controls how long tests are allowed to run and how they behave during execution.
 
 * **Test Directory:** `./tests` — The framework looks for all test files within this folder.
 * **Parallel Execution:** `fullyParallel: true` — Tests run simultaneously across multiple workers to speed up execution time.
+  * **Example:** We can run the same test simultaneously for Chrome, Firefox, Edge, and even on mobile viewports.
 * **Step Timeout:** `30,000 ms` (30 seconds) — Maximum time allowed for a single step/assertion to complete before failing.
-* **Global Timeout:** `90,000 ms` (90 seconds) — Maximum time allowed for an entire test block to execute.
-
+  * **Example:** If your script tries to `await page.click('#submit-btn')`, Playwright will wait up to 30 seconds for that button to become visible and clickable. If the button doesn't load in that time (e.g., due to a slow network or a bug), that specific step fails.
+* **Global Timeout:** `90,000 ms` (90 seconds) — Maximum time allowed for an entire test block to execute from start to finish.
+  * **Example:** If an end-to-end test includes logging in, navigating to a dashboard, filling out a form, and verifying a success message, the combined time for *all* of those actions cannot exceed 90 seconds. If the test is still running at the 91-second mark, Playwright aborts it completely.
 ---
 
-## ⚙️ Shared Browser Settings (`use`)
+## Shared Browser Settings (`use`)
 
 These settings apply globally to all browser contexts unless explicitly overridden inside a specific test.
 
@@ -31,7 +33,7 @@ These settings apply globally to all browser contexts unless explicitly overridd
 
 ---
 
-## 🏗️ Project Configurations
+## Project Configurations
 
 Projects define the specific environments and browsers where tests will execute. Currently, the framework is optimized for **Desktop Chromium** with a pre-test setup phase.
 
@@ -45,7 +47,7 @@ Projects define the specific environments and browsers where tests will execute.
 
 ---
 
-## 🔄 Continuous Integration (CI) Handling
+## Continuous Integration (CI) Handling
 
 The configuration is smart enough to detect if it is running in a local environment or a CI pipeline (like GitHub Actions), automatically adjusting specific parameters:
 
