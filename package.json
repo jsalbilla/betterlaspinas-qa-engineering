@@ -16,7 +16,7 @@
     "test:e2e:local": "BASE_URL=http://localhost:4200 npx playwright test",
     "test:e2e:file": "npx playwright test tests/api.spec.ts",
     "test:e2e:line": "npx playright test tests/api.spec.ts:10:", 
-    "test:sanity": "npx playwright test --grep @firsts"
+    "test:e2e:sanity": "npx playwright test --grep @firsts"
   },
   "repository": {
     "type": "git",
