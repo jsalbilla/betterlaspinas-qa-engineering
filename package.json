@@ -8,13 +8,15 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "npx playwright test",
-    "test:chromium": "npx playwright test --project chromium",
-    "test:first": "npx playwright test --grep @first",
-    "test:local": "BASE_URL=http://localhost:4200 npx playwright test",
-    "test:report": "npx playwright test && npx playwright show-report",
-    "test:ui": "npx playwright test --ui",
-    "reports": "npx playwright show-report"
+    "test:e2e": "npx playwright test && npx playwright show-report",
+    "test:e2e:ui": "npx playwright test --ui",
+    "test:e2e:chromium": "npx playwright test --project chromium",
+    "test:e2e:headed": "npx playwright test --headed",
+    "test:e2e:codegen": "npx playwright codegen",
+    "test:e2e:local": "BASE_URL=http://localhost:4200 npx playwright test",
+    "test:e2e:file": "npx playwright test tests/api.spec.ts",
+    "test:e2e:line": "npx playright test tests/api.spec.ts:10:", 
+    "test:sanity": "npx playwright test --grep @firsts"
   },
   "repository": {
     "type": "git",
